@@ -1,0 +1,110 @@
+	<ul class="collapsible" data-collapsible="accordion">
+		{{#each cart}}	
+		<li>
+			<div class="collapsible-header" data-id="{{this.id}}" data-img="{{this.img}}">
+				<div class="image valign-wrapper">
+					<img src="{{this.image}}" class="valign" />
+				</div>
+				<div class="product">
+					<h5 class="truncate">{{this.name}}</h5>
+					<h6 class="price">€ <span class="price-value">{{renderPrice this.price}}</span></h6>
+				</div>
+				<div class="quantity valign-wrapper">
+					<h5 class="valign center-block">{{this.quantity}}</h5>
+				</div>
+			</div>
+
+			<div class="collapsible-body">
+				<i id="trash" class="remove-element fa fa-trash-o" data-id="{{id}}" aria-hidden="true"></i>
+				<div class="quantity-manager">		
+					<i class="valign-wrapper fa fa-minus" aria-hidden="true"></i>
+					<div class="valign-wrapper number">
+						<h5 class="edited-quantity valign center-block">{{quantity}}</h5>
+					</div>
+					<i class="valign-wrapper fa fa-plus" aria-hidden="true"></i>
+				</div>
+			</div>
+		</li>
+		{{/each}}
+
+	<div class="checkout red valign-wrapper darken-4">
+		<div class="total valign">
+			Totale: 
+			<span class="total-price">€ <span id="total-price">{{renderPrice this.totalPrice}}</span></span>
+		</div>
+		<a class="buy valign red darken-2 modal-trigger" data-quantity="{{this.quantityCart}}" href="#modal">
+			Acquista
+		</a>
+	</div>
+
+	<!-- Confirm Modal Structure -->
+	<div id="modal" class="modal bottom-sheet">
+		<div class="modal-content">
+			<h4>Conferma Ordine</h4>
+			<table>
+				<tbody>
+					<tr>
+						<td>Prezzo Totale</td>
+						<td></td>
+						<td class="price">€ <span class="total-price">{{renderPrice this.totalPrice}}</span></td>
+					</tr>
+					<tr>
+						<td>Spese di Spedizione</td>
+						<td></td>
+						<td class="price">€ 2.00</td>
+					</tr>
+				</tbody>
+				<tfoot style="border-top: 1px solid #d0d0d0">
+					<tr>
+						<td></td>
+						<td></td>
+						<td id="final-price" class="price">€ <span class="final-price">{{renderPrice this.finalPrice}}</span></td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+		<div class="modal-footer">
+			<a id="buy" class=" modal-action modal-close waves-effect waves-green btn-flat">Acquista</a>
+			<a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">Annulla</a>
+		</div>
+	</div>
+
+	<!-- Address Modal Structure -->
+	<div id="address-modal" class="modal modal-fixed-footer">
+			<div class="modal-content">
+				<h4>Indirizzo</h4>
+				<div class="row">
+					<div>
+						<label>Indirizzo</label>
+						<input id="address" type="text" class="validate" value="{{address}}">
+					</div>
+					<div>
+	    				<label>Citt&agrave;</label>
+						<select id="city">
+						{{#if inCity}}
+							<option value="" disabled>Scegli la citt&agrave;</option>
+							<option value="{{currentCity}}" selected>{{currentCity}}</option>
+						{{else}}
+							<option value="" disabled selected>Scegli la citt&agrave;</option>
+						{{/if}}
+
+						{{#each cities}}
+							<option value="{{this}}">{{this}}</option>
+						{{/each}}
+	    				</select>
+					</div>
+					<div>
+						<label>CAP</label>
+						<input id="zip" type="number" class="validate" value="{{zip}}">
+					</div>
+					<div>
+						<label>Telefono</label>
+						<input id="phone" type="tel" class="validate" value="{{phone}}">
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a id="submitAddress" class="modal-action modal-close waves-effect waves-green btn-flat ">Invia</a>
+				<a class="modal-action modal-close waves-effect waves-red btn-flat ">Annulla</a>
+			</div>
+		</div>

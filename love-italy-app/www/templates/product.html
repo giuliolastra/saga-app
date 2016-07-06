@@ -1,0 +1,35 @@
+<img src="{{img}}" class="product-image" onerror="this.src = './img/logo.png';">
+
+<a id="addToCart" class="btn-floating btn-large waves-effect waves-light red darken-4" data-id="{{id}}" data-name="{{name}}" data-price="{{renderPrice price}}" data-img="{{this.image_id}}">
+	<i class="fa fa-cart-plus" aria-hidden="true"></i>
+</a>
+
+<div class="clearfix"></div>
+
+<div class="product-info">
+	<h4>{{name}}</h4>
+	<h6 id="goToManu" data-id="{{id_manufacturer}}" data-name="{{manufacturer_name}}"><i class="left fa fa-shopping-basket" aria-hidden="true"></i> {{manufacturer_name}}</h6>
+</div>
+<div class="price-box valign-wrapper">
+
+	<h4 class="valign price left">€ {{renderPrice price}}</h4>
+	
+	<div class="quantity z-depth-1">		
+		<i class="valign-wrapper fa fa-minus" aria-hidden="true"></i>
+		<div class="valign-wrapper number">
+			<h5 id="quantity" class="valign center-block">1</h5>
+		</div>
+		<i class="valign-wrapper fa fa-plus" aria-hidden="true"></i>
+	</div>
+
+</div>
+
+<div class="clearfix"></div>
+
+
+<ul class="collapsible" data-collapsible="accordion">
+	<li class="">
+		<div class="collapsible-header active"><i class="fa fa-info" aria-hidden="true"></i>Descrizione Prodotto</div>
+		<div class="collapsible-body"><p>{{ description }}</p></div>
+	</li>
+</ul>

@@ -1,0 +1,122 @@
+	<!-- "Nuovi" Tab -->
+		<div id="tab-2" class="col s12">
+			<div class="products">
+				<div class="row">
+					<div class="col s6">
+						<!-- Card Start -->
+						{{#each models}}
+						{{#unless (mod @key 2)}}
+						<div class="col s12">
+							<div class="card">
+								<div data-id="{{this.id}}" class="goToProduct card-image waves-effect waves-block waves-light">
+									<img class="activator" src="{{img}}" default-src="./img/loader.gif" onerror="this.src = './img/logo.png';">
+								</div>
+								<div class="card-content">
+									<h5 data-id="{{this.id}}" class="goToProduct">{{this.name}}</h5>
+									<h6 class="goToManufacturer"><i class="left fa fa-shopping-basket" aria-hidden="true"></i>{{this.manufacturer_name}}</h6>
+									<div class="clearfix"></div>
+									<h5>
+										<a href="javascript:void(0);">€ {{renderPrice this.price}}</a>
+										<a data-id="{{this.id}}" data-name="{{this.name}}" data-price="{{renderPrice this.price}}" data-img="{{this.image_id}}" class="addToCart btn-floating right green darken-4 waves-effect waves-light"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+									</h5>
+								</div>
+							</div>
+						</div>
+						{{/unless}}
+						{{/each}}
+						<!-- Card End -->
+					</div>
+					<div class="col s6">
+						<!-- Card Start -->
+						{{#each models}}
+						{{#if (mod @key 2)}}
+						<div class="col s12">
+							<div class="card">
+								<div data-id="{{this.id}}" class="goToProduct card-image waves-effect waves-block waves-light">
+									<img class="activator" src="{{img}}" default-src="./img/loader.gif" onerror="this.src = './img/logo.png';">
+								</div>
+								<div class="card-content">
+									<h5 data-id="{{this.id}}" class="goToProduct">{{this.name}}</h5>
+									<h6 class="goToManufacturer"><i class="left fa fa-shopping-basket" aria-hidden="true"></i>{{this.manufacturer_name}}</h6>
+									<div class="clearfix"></div>
+									<h5>
+										<a href="javascript:void(0);">€ {{renderPrice this.price}}</a>
+										<a data-id="{{this.id}}" data-name="{{this.name}}" data-price="{{this.price}}" data-img="{{this.image_id}}" class="addToCart btn-floating right green darken-4 waves-effect waves-light"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+									</h5>
+								</div>
+							</div>
+						</div>
+						{{/if}}
+						{{/each}}
+						<!-- Card End -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	<!-- "Vetrina" Tab -->
+		<div id="tab-1" class="col s12">
+			<div class="products">
+				<div class="row">
+					<div class="col s6">
+						<!-- Card Start -->
+						{{#each (shuffleModels models)}}
+						{{#unless (mod @key 2)}}
+						<div class="col s12">
+							<div class="card">
+								<div data-id="{{this.id}}" class="goToProduct card-image waves-effect waves-block waves-light">
+									<img class="activator" src="{{img}}" default-src="./img/loader.gif">
+								</div>
+								<div class="card-content">
+									<h5 data-id="{{this.id}}" class="goToProduct">{{this.name}}</h5>
+									<h6 class="goToManufacturer" style="color:#a4a4a4;"><i class="left fa fa-shopping-basket" aria-hidden="true"></i>{{this.manufacturer_name}}</h6>
+									<div class="clearfix"></div>
+									<h5>
+										<a href="javascript:void(0);">€ {{renderPrice this.price}}</a>
+										<a data-id="{{this.id}}" data-name="{{this.name}}" data-price="{{renderPrice this.price}}" data-img="{{this.image_id}}" class="addToCart btn-floating right green darken-4 waves-effect waves-light"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+									</h5>
+								</div>
+							</div>
+						</div>
+						{{/unless}}
+						{{/each}}
+						<!-- Card End -->
+					</div>
+					<div class="col s6">
+						<!-- Card Start -->
+						{{#each models}}
+						{{#if (mod @key 2)}}
+						<div class="col s12">
+							<div class="card">
+								<div data-id="{{this.id}}" class="goToProduct card-image waves-effect waves-block waves-light">
+									<img class="activator" src="{{img}}" default-src="./img/loader.gif">
+								</div>
+								<div class="card-content">
+									<h5 data-id="{{this.id}}" class="goToProduct">{{this.name}}</h5>
+									<h6 class="goToManufacturer" style="color:#a4a4a4;"><i class="left fa fa-shopping-basket" aria-hidden="true"></i>{{this.manufacturer_name}}</h6>
+									<div class="clearfix"></div>
+									<h5>
+										<a href="javascript:void(0);">€ {{renderPrice this.price}}</a>
+										<a data-id="{{this.id}}" data-name="{{this.name}}" data-price="{{this.price}}" data-img="{{this.image_id}}" class="addToCart btn-floating right green darken-4 waves-effect waves-light"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+									</h5>
+								</div>
+							</div>
+						</div>
+						{{/if}}
+						{{/each}}
+						<!-- Card End -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+		<!-- Floating Cart Button -->
+		<div class="fixed-action-btn" style="right: 24px;">
+			<a class="goToCart btn-floating btn-large waves-effect waves-light red darken-4">
+				<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			</a>
+		</div>
+
+

@@ -1,0 +1,92 @@
+	<!-- Navbar Fixed -->
+	<div id="app-navbar" class="navbar-fixed">
+		<!-- SearchBar [default: hidden] -->
+		<nav id="search-bar" class="white">
+			<div class="nav-wrapper">
+				<form id="search-form">
+					<div class="input-field">
+						<input id="search" type="search" required />
+						<i class="fa fa-search" id="search-submit-button" aria-hidden="true"></i>
+						<i class="fa fa-arrow-left" id="search-back-button" aria-hidden="true"></i>
+					</div>
+				</form>
+			</div>
+		</nav>
+		<!-- NavBar [default: shown] -->
+		<nav id="nav-bar" class="red darken-4">
+			<div class="nav-wrapper container">
+				<a class="brand-logo truncate" id="app-title">Love Italy</a>
+				<a class="button-collapse" data-activates="sidebar-mobile"><i class="fa fa-bars" aria-hidden="true"></i></a>
+				<a class="right search-icon" id="search-button"><i class="fa fa-search" aria-hidden="true"></i></a>
+			</div>
+		</nav>
+		<div id="home-tabs">
+			<div class=" row">
+				<div class="col s12">
+					<ul class="red darken-4 tabs">
+						<li class="tab col s6"><a href="#tab-1" class="active">Vetrina</a></li>
+						<li class="tab col s6"><a href="#tab-2">Nuovi</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<!-- Mobile sidebar menu -->
+		<ul class="side-nav" id="sidebar-mobile">
+			<li class="header red darken-2">
+				<div class="row">
+					<div class="col s4">
+						<img class="responsive-img circle" src="./img/blank-avatar.png" />
+					</div>
+					<div class="username">
+						{{accountEmail}}
+					</div>
+				</div>
+			</li>
+			<!-- Per inserire un separatore di riga utilizzare l'elemento <hr /> all'interno della voce della lista corrente o molto meglio in un elemento della lista a se stante <div class="divider"></div> -->
+			<li class="bold"><a class="goToHome"><i class="fa fa-home fa-fw" aria-hidden="true"></i> Home</a></li>
+			<li class="bold no-padding">
+				<ul class="collapsible collapsible-accordion">
+					<li>
+						<a class="collapsible-header">
+							<i class="fa fa-tags fa-fw" aria-hidden="true"></i> Categorie <i class="fa fa-caret-down right rotate" aria-hidden="true"></i>
+						</a>
+						<div class="collapsible-body">
+							<ul>
+								{{#each categories.models}}
+								<li><a data-id="{{this.id}}" data-name="{{this.name}}" class="goToCategory truncate"><i class="fa fa-tag" aria-hidden="true"></i> {{this.name}}</a></li>
+								{{/each}}
+
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li class="bold no-padding">
+				<ul class="collapsible collapsible-accordion">
+					<li>
+						<a class="collapsible-header">
+							<i class="fa fa-shopping-basket fa-fw" aria-hidden="true"></i>Le Aziende <i class="fa fa-caret-down right rotate" aria-hidden="true"></i>
+						</a>
+						<div class="collapsible-body">
+							<ul>
+								{{#each manufacturers.models}}
+								<li><a data-id="{{this.id}}" data-name="{{this.name}}" class="goToManufacturer truncate"><i class="fa fa-tag" aria-hidden="true"></i>{{this.name}}</a></li>
+								{{/each}}
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li class="bold"><a class="goToCart"><i class="fa fa-shopping-cart fa-fw" aria-hidden="true"></i> Carrello</a></li>
+			<li><div class="divider"></div></li>
+			<li class="bold"><a class="goToContact"><i class="fa fa-envelope fa-fw" aria-hidden="true"></i> Contatti</a></li>
+			<li class="bold"><a id="goToInfo"><i class="fa fa-info-circle" aria-hidden="true"></i> Come funziona </a></li>
+			<li class="bold"><a id="goToFaq"><i class="fa fa-question-circle fa-fw" aria-hidden="true"></i> F.A.Q.</a></li>
+			<li class="bold"><a id="goToSettings"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> Impostazioni</a></li>
+		</ul>
+
+
+	<div id="content">
+	</div>

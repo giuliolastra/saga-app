@@ -1,0 +1,31 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "com.saga.LoveItaly"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.saga.LoveItaly"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.saga.LoveItaly"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.saga.LoveItaly"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.saga.LoveItaly"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.saga.LoveItaly"
+        }
+    }
+}

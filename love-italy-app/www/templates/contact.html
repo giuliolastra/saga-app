@@ -1,0 +1,48 @@
+<img src="./img/contact.jpg" id="image" />
+<div class="row">
+	<p><strong>Loveitaly</strong> s.r.l.s.<br />
+	Via Abbazia 16<br />
+	66030 Treglio (CH)<br />
+	Tel: 339 53 47 252<br />
+	Email: info@loveitaly.net</p>  
+</div>
+	
+<div class="row center-box">
+	<!-- Modal Trigger -->
+	<a class="waves-effect waves-light btn modal-trigger" id="contact">Contattaci</a>
+</div>  
+
+<!-- Modal Structure -->
+<div id="modal" class="modal modal-fixed-footer">
+	<div class="modal-content">          
+		<h4>Contattaci</h4>
+		<div class="row">
+			<div>
+				<label>Nome</label>
+				<input id="name" type="text" class="validate">
+			</div>
+			<div>
+				<label>Email</label>
+				<input id="email" type="email" class="validate">
+			</div>
+			<div>
+				<label>Oggetto</label>
+				<select id="subject">
+					<option value="" disabled selected>Scegli l'oggetto</option>
+					<option value="1">Adesioni</option>
+					<option value="2">Servizio Clienti</option>
+					<option value="3">Webmaster</option>
+					<option value="4">Altro</option>
+				</select>
+			</div>
+			<div>
+				<label>Messaggio</label>
+				<textarea id="message" class="materialize-textarea"></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<a id="sendMail" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Invia</a>
+		<a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">Annulla</a>
+	</div>
+</div>

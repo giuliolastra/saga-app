@@ -1,0 +1,131 @@
+<img src="./img/contact.jpg" class="top-image" />
+<div class="settings-wrapper z-depth-1">
+	<div class="section valign-wrapper row">
+		<!--Text's Option -->
+		<div class="valign col s9">
+			<h5>Notifiche</h5>
+			<p>Ricevi le notifiche dall'app</p>
+		</div>
+		<!-- Switch's Option -->
+		<div class="valign col s3">
+			<div class="switch right">
+				<label>
+					<input id="notify" type="checkbox" checked="checked">
+					<span class="lever"></span>
+				</label>
+			</div>
+		</div>
+	</div>
+	<div class="divider"></div>
+	<div class="section valign-wrapper row">
+		<!--Text's Option -->
+		<div class="valign col s9">
+			<h5>Newsletter</h5>
+			<p>Ricevi le novità via email</p>
+		</div>
+		<!-- Switch's Option -->
+		<div class="valign col s3">
+			<div class="switch right">
+				<label>
+					<input id="newsletter" type="checkbox">
+					<span class="lever"></span>
+				</label>
+			</div>
+		</div>
+	</div>
+	<div class="divider"></div>
+	<div id="address-tab" class="section valign-wrapper row">
+		<!--Text's Option -->
+		<div class="valign col s12">
+			<h5>Indirizzo</h5>
+			<p>Inserisci o modifica l'indirizzo per la spedizione</p>
+		</div>
+	</div>
+	<div class="divider"></div>
+	<div id="erase-cart-tab" class="section valign-wrapper row">
+		<!--Text's Option -->
+		<div class="valign col s12">
+			<h5>Svuota Carrello</h5>
+			<p>Rimuovi tutti gli elementi dal carrello</p>
+		</div>
+	</div>
+	<div class="divider"></div>
+	<div id="logout-tab" class="section valign-wrapper row">
+		<!--Text's Option -->
+		<div class="valign col s12">
+			<h5>Logout</h5>
+			<p>Esci dal tuo Account</p>
+		</div>
+	</div>
+	<div class="divider"></div>
+</div>
+
+<!-- < Address Modal Structure > -->
+	<div id="address-modal" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<h4>Indirizzo</h4>
+			<div class="row">
+				<div>
+					<label>Indirizzo</label>
+					<input id="address" type="text" class="validate" value="{{address}}">
+				</div>
+				<div>
+    				<label>Citt&agrave;</label>
+					<select id="city">					
+						{{#if inCity}}
+							<option value="" disabled>Scegli la citt&agrave;</option>
+							<option value="{{this.currentCity}}" selected>{{currentCity}}</option>
+						{{else}}
+							<option value="" disabled selected>Scegli la citt&agrave;</option>
+						{{/if}}
+
+						{{#each cities}}
+							<option value="{{this}}">{{this}}</option>
+						{{/each}}
+    				</select>
+				</div>
+				<div>
+					<label>CAP</label>
+					<input id="zip" type="number" class="validate" value="{{zip}}">
+				</div>
+				<div>
+					<label>Telefono</label>
+					<input id="phone" type="tel" class="validate" value="{{phone}}">
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a id="submitAddress" class="modal-action modal-close waves-effect waves-green btn-flat ">Invia</a>
+			<a class="modal-action modal-close waves-effect waves-red btn-flat ">Annulla</a>
+		</div>
+	</div>
+<!-- </ Address Modal Structure > -->							
+
+<!-- < Erase Cart Modal Structure > -->
+	<div id="erase-cart-modal" class="modal">
+		<div class="modal-content">
+			<div>
+				<h5>Vuoi davvero svuotare il carrello?</h5>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a id="confirm-erase-cart" class="modal-action modal-close waves-effect waves-green btn-flat">Svuota</a>
+			<a class="modal-action modal-close waves-effect waves-red btn-flat ">Annulla</a>
+		</div>
+	</div>
+<!-- </ Erase Cart Modal Structure > -->							
+
+
+<!-- < Logout Confirmation Modal Structure > -->
+	<div id="logout-modal" class="modal">
+		<div class="modal-content">
+			<div>
+				<h5>Vuoi davvero uscire dal tuo account?</h5>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a id="confirm-logout" class="modal-action modal-close waves-effect waves-green btn-flat">Esci</a>
+			<a class="modal-action modal-close waves-effect waves-red btn-flat ">Annulla</a>
+		</div>
+	</div>
+<!-- </ Logout Confirmation Modal Structure > -->

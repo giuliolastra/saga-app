@@ -1,0 +1,49 @@
+	{{#if valid}}
+		
+		<ul class="collapsible" data-collapsible="accordion">
+		
+		{{#each models}}
+		
+			<li class="goToProduct" data-id="{{this.id}}">
+			
+				<div class="collapsible-header">
+					<div class="image valign-wrapper">
+						<img src="{{this.img}}" onerror="this.src = './img/logo.png';" class="valign" />
+					</div>
+					<div class="product">
+						<h5 class="truncate">{{this.name}}</h5>
+						<h6>€ {{renderPrice this.price}}</h6>
+					</div>
+				</div>
+
+				<div class="collapsible-body">
+				</div>
+			  
+			</li>
+	
+		{{/each}}
+	
+		</ul>
+
+	{{else}}
+
+		<div class="valign-wrapper">
+			<img src="./img/no-manufacturer-product.png" class="no-result valign" alt="Nessun prodotto per questa azienda" />
+		</div>
+	
+	{{/if}}
+
+	<!-- Floating Info Button -->
+	<div class="fixed-action-btn" style="right: 24px;">
+		<a class="btn-floating btn-large red darken-4 waves-effect waves-light" id="info">
+			<i class="fa fa-info" aria-hidden="true"></i>
+		</a>
+	</div>
+
+	<!-- Modal Structure -->
+	<div id="modal" class="modal">
+		<div class="modal-content">
+			<img src="{{manImg}}" />
+			<p>{{description}}</p>
+		</div>
+	</div>

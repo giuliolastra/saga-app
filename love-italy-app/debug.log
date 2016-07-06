@@ -1,0 +1,8 @@
+[0624/111536:ERROR:file_io.cc(30)] read: expected 4, observed 0
+[0625/233404:ERROR:process_reader_win.cc(141)] SuspendThread: Accesso negato. (0x5)
+[0625/233404:ERROR:process_reader_win.cc(141)] SuspendThread: Accesso negato. (0x5)
+[0625/233404:ERROR:process_reader_win.cc(141)] SuspendThread: Accesso negato. (0x5)
+[0625/233404:ERROR:process_reader_win.cc(141)] SuspendThread: Accesso negato. (0x5)
+[0625/233404:ERROR:process_reader_win.cc(141)] SuspendThread: Accesso negato. (0x5)
+[0625/233404:ERROR:exception_snapshot_win.cc(57)] thread ID 10440 not found in process
+[0625/233404:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::InitializeException failed
